@@ -1,1 +1,15 @@
-github  GOOD 
+C语言 .c ——————> .exe
+	预处理：把 .h .c 展开形成一个文件。宏定义直接替换 头文件 库文件 .i
+	gcc -E hello.c -o hello.i
+
+	编译：.i 生成一个汇编代码文件 .S
+	gcc -S hello.i -o hello.S
+
+	汇编：.S 生成一个 .o .obj
+	gcc -c hello.S -o hello.o
+
+	链接：.o 链接 .elf .exe
+	gcc hello.o -o hello
+
+脚本语言： Makefile
+	Linux C/C++ 必须要使用的一个编译脚本.
