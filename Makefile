@@ -6,8 +6,27 @@
 #gcc main.c libjjcc.so -o testD
 RMRF = rm -rf
 CC = gcc
+MAI = main.c
+OBJ = main.o
 TAR = test
 TARD = testD
-.PHONY: all clean
+LIB_PATH = -I ./JJCC
+LJ_PATH = -L ./JJCC
+LIBS = -ljjcc
+LIBJ = -l:libjjcc.a
+
+.PHONY:clean cleanall all
+all:test1 test2
+test1:$(TAR)
+test2:$(TARD)
+$(TAR):$(OBJ)
+	$(CC) -o $@ $^ $(LJ_PATH) $(LIBJ)
+$(TARD):$(MAI)
+	$(CC) -o $@ $^ $(LIB_PATH) $(LIBS)
+%.o:%.c
+	$(CC) -o $@ -c $^ $(LIB_PATH)
+
 clean:
-	$(RMRF) $(TAR) $(TARD)
+	$(RMRF) $(OBJ)
+cleanall:
+	$(RMRF) $(OBJ) $(TAR) $(TARD)
