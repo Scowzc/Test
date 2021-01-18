@@ -58,13 +58,21 @@
 # 	$(RMRF)  $(TAR) $(TARD)
 OBJ = add.o sub.o mul.o div.o
 LIB = libjjcc.a
+LIBS = libjjcc.so
+CC = gcc
+SHA = -shared -fPIC
 ARC = ar -crv
 RMRF = rm -rf
+all:test1 test2
+test1:$(LIB)
+test2:$(LIBS)
 $(LIB):$(OBJ)
 	$(ARC) $@ $^
- %.o:%.c
+$(LIBS):$(OBJ)
+	$(CC) $(SHA) -o $@ $^
+%.o:%.c
 	$(CC) -c $^ -o $@
-.PHONY:clean
+.PHONY:clean all
 clean1: 
 	$(RMRF) $(OBJ)
 clean: clean1 clean2
