@@ -1,0 +1,17 @@
+{
+	"people":	"3",
+	"information":	[{
+			"sex":	"male",
+			"name":	"小帅",
+			"year":	"1998"
+		}, {
+			"sex":	"male",
+			"name":	"小雷",
+			"year":	"1999"
+		}, {
+			"sex":	"female",
+			"name":	"小美",
+			"year":	"2000"
+		}],
+	"where":	"anywhere"
+}
