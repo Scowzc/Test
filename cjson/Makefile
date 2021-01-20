@@ -25,7 +25,7 @@ $(TARD):$(MAI)
 	$(CC) -o $@ -c $^ $(LIB_PATH) 
 
 
-clean:clean clean1 clean2
+cleanall:clean clean1 clean2
 
 clean:
 	$(RMRF) $(OBJ)
