@@ -1,0 +1,2 @@
+sipp -v 查看版本号
+sipp -sd uac 查看对应xml
