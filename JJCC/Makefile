@@ -46,7 +46,7 @@
 #添加进动态库gcc -shared -fPIC -o libjjcc.so add.o sub.o mul.o div.o
 # $(AAA):$(OBJ)
 # 	$(CC) $(SHA) -o $@ $^
-	#$(MV) $@ $(LIBPATH) 
+# $(MV) $@ $(LIBPATH) 
 # %.o:%.c
 # 	$(CC) -c $^ -o $@
 
